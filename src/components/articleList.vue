@@ -4,23 +4,19 @@
       <article class="blog-post">
         <div class="blog-post-body">
           <h2>
-            <a href="/articles/detail/31/">ES6统计</a>
+            <a :href="'#/article/' + articleData.id ">{{ articleData.title }}</a>
           </h2>
           <div class="post-meta">
-            <span>分类于 liulib</span>&nbsp;|&nbsp;
-            <span>发表于 2020年2月27日12:19</span>&nbsp;|&nbsp;
-            <span>评论数 0</span>&nbsp;|&nbsp;
-            <span>阅读数 4</span>
+            <span>分类于 {{ articleData.category }}</span>&nbsp;|&nbsp;
+            <span>发表于 {{ articleData.update_time }}</span>&nbsp;|&nbsp;
+            <span>评论数 </span>&nbsp;|&nbsp;
+            <span>阅读数 {{ articleData.read_nums }}</span>
           </div>
           <p>
-            我一直对前端需要「熟悉」浏览器缓存是持疑问态度的，因为前端无法控制缓存，即无法通过代码或者某种方式来指定某些资源是否需要缓存。
-            举个例子，我们的 index.html 文件中引入了 bundle.js 这个文件，我们希望在每次刷新页面时，都不要使用缓存，每次都去服务器获取最新的 bundle.js 文件。
-            要实现这个需求，只从前端的角度来思考，怎么做？
-            或许有人会说 meta 标签支持指定 Cache-Control，但这是针对全站资源，如果只是针对特定的资源如 bundle.js 获取最新的
-            似乎是无法实现的。那什么角色应该了解这些内容呢？
+            {{articleData.brief}}
           </p>
           <div class="read-more">
-            <a href="/articles/detail/31/">继续查看</a>
+            <a :href="'#/article/' + articleData.id ">继续查看</a>
           </div>
         </div>
       </article>
@@ -30,6 +26,7 @@
 
 <script>
 export default {
+  props: ['articleData'],
   components: {},
   data () {
     return {}
@@ -61,10 +58,15 @@ export default {
   padding: 0px 0px 20px;
   font-size: 2rem;
   line-height: 49px;
+  a {
+    text-decoration: none;
+    color: #304455
+  }
 }
 
 .blog-post .post-meta {
   margin-bottom: 20px;
+  color: #B1B1B1;
 }
 
 .blog-post p {

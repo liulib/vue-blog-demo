@@ -2,7 +2,7 @@
   <div id="app">
     <header class="navbar clearfix">
       <nav>
-        <!-- logo部分 -->
+        <!-- 文字logo部分 -->
         <div class="site-name">琉璃B的博客</div>
         <!-- 导航栏部分 -->
         <div class="site-navbar clearfix">
@@ -14,33 +14,20 @@
             </li>
 
             <li class="nav-dropdown-container">
-              <a href="#">首页</a>
-              <ul class="nav-dropdown">
-                <!-- <li><h4>文档</h4></li> -->
-                <li>
-                  <ul>
-                    <li>
-                      <a href="/v2/guide/" class="nav-link current">教程</a>
-                    </li>
-                    <li>
-                      <a href="/v2/guide/" class="nav-link current">教程</a>
-                    </li>
-                    <li>
-                      <a href="/v2/style-guide/" class="nav-link">风格指南</a>
-                    </li>
-                    <li>
-                      <a href="/v2/examples/" class="nav-link">示例</a>
-                    </li>
-                    <li>
-                      <a href="/v2/cookbook/" class="nav-link">Cookbook</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+              <a href="/">首页</a>
             </li>
 
             <li class="nav-dropdown-container">
               <a href="#">分类</a>
+                <ul class="nav-dropdown">
+                <li>
+                  <ul>
+                    <li :key="item.id" v-for="item in category">
+                      <a :href="'#/category/' + item.id ">{{item.name}}</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </li>
             <li class="nav-dropdown-container">
               <a href="#">归档</a>
@@ -60,11 +47,8 @@
       <!-- 隐形导航栏 -->
       <div class="sidebar">
         <nav class="nav-links">
-          <div class="nav-item">
-            <a
-              href="/front-end-playground/"
-              class="nav-link router-link-exact-active router-link-active"
-            >概述</a>
+          <div class="nav-item" :key="item.id" v-for="item in category">
+            <a :href="'#/category/' + item.id ">{{item.name}}</a>
           </div>
         </nav>
       </div>
@@ -72,7 +56,30 @@
     </header>
   </div>
 </template>
-
+<script>
+import { fetchCategory } from '../utils/server.js'
+export default {
+  name: 'l-header',
+  data: function () {
+    return {
+      category: ''
+    }
+  },
+  methods: {
+    async getCatogoryData () {
+      const res = await fetchCategory()
+      if (res.status === 200) {
+        this.category = res.data.result
+      } else {
+        console.log(res.data)
+      }
+    }
+  },
+  created () {
+    this.getCatogoryData()
+  }
+}
+</script>
 <style lang="less" scoped>
 @base-color :  #42b983;
 
@@ -223,7 +230,3 @@ nav li a {
 }
 
 </style>
-
-<script>
-export default {}
-</script>

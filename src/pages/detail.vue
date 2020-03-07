@@ -4,8 +4,7 @@
     <l-header></l-header>
     <!-- 主体区域 -->
     <main class="main">
-      <l-logo></l-logo>
-      <l-articleList v-for="item in articleListData" :key="item.id" :articleData=item></l-articleList>
+        <l-article :articleData="article"></l-article>
     </main>
     <!-- footer区域 -->
    <l-footer></l-footer>
@@ -16,37 +15,36 @@
 <script>
 import temHeader from '../components/header.vue'
 import temFooter from '../components/footer.vue'
-import temLogo from '../components/logo.vue'
 import temBackTOP from '../components/backTop.vue'
-import temArticleList from '../components/articleList.vue'
-import { fetchArticleList } from '../utils/server.js'
+import temArticleDetail from '../components/articleDetail.vue'
+import { fetchArticle } from '../utils/server.js'
 
 export default {
-  name: 'index',
+  name: 'detail',
+  props: ['id'],
   data: function () {
     return {
-      articleListData: ''
+      article: ''
     }
   },
   components: {
     'l-header': temHeader,
     'l-footer': temFooter,
-    'l-logo': temLogo,
     'l-backTOP': temBackTOP,
-    'l-articleList': temArticleList
+    'l-article': temArticleDetail
   },
   methods: {
-    async getArticleList () {
-      const res = await fetchArticleList()
+    async getArticle (id) {
+      const res = await fetchArticle(id)
       if (res.status === 200) {
-        this.articleListData = res.data.result
+        this.article = res.data
       } else {
         console.log(res)
       }
     }
   },
   created () {
-    this.getArticleList()
+    this.getArticle(this.id)
   }
 }
 

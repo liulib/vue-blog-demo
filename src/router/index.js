@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../pages/index.vue'
+import Detail from '../pages/detail.vue'
 // import Logo from '../components/logo.vue'
 // import ArticleList from '../components/articleList.vue'
 
@@ -8,11 +9,14 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    mode: 'hash',
     path: '/',
-    components: {
-      default: Index
-    }
+    component: Index
+  },
+  {
+    path: '/article/:id',
+    props: true,
+    // props: route => ({ id: route.params.id }),
+    component: Detail
   }
 ]
 
