@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../pages/index.vue'
 import Detail from '../pages/detail.vue'
+import About from '../pages/about.vue'
 // import Logo from '../components/logo.vue'
 // import ArticleList from '../components/articleList.vue'
 
@@ -17,6 +18,10 @@ const routes = [
     props: true,
     // props: route => ({ id: route.params.id }),
     component: Detail
+  },
+  {
+    path: '/about',
+    component: About
   }
 ]
 

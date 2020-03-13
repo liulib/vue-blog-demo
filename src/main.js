@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import axios from 'axios'
-// axios.defaults.baseURL = 'http://127.0.0.1:12345/api/'
-// Vue.prototype.$http = axios
+import moment from 'moment'
+
+Vue.filter('moment', function (value, formatString) {
+  formatString = formatString || 'YYYY-MM-DD HH:mm'
+  return moment(value).format(formatString) // value可以是普通日期 20170723
+  // return moment.unix(value).format(formatString) // 这是时间戳转时间
+})
 
 Vue.config.productionTip = false
 

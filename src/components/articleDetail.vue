@@ -11,7 +11,7 @@
                             <span>阅读数 {{ articleData.read_nums }}</span>
                             </div>
                             <div class="blog-post-text">
-                            <p>{{articleData.content}}</p>
+                            <p v-html = 'articleData.content'></p>
                             </div>
                     </div>
             </article>

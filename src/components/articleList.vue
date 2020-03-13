@@ -8,7 +8,7 @@
           </h2>
           <div class="post-meta">
             <span>分类于 {{ articleData.category }}</span>&nbsp;|&nbsp;
-            <span>发表于 {{ articleData.update_time }}</span>&nbsp;|&nbsp;
+            <span>发表于 {{ articleData.update_time | moment }}</span>&nbsp;|&nbsp;
             <span>评论数 </span>&nbsp;|&nbsp;
             <span>阅读数 {{ articleData.read_nums }}</span>
           </div>
@@ -102,6 +102,10 @@ export default {
 
 .post-meta a:hover {
   border-bottom: 3px solid #42b983;
+}
+
+.read-more a {
+  text-decoration: none;
 }
 
 .read-more a:hover {

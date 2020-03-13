@@ -36,7 +36,7 @@
               <a href="#">最新</a>
             </li>
             <li class="nav-dropdown-container">
-              <a href="#">关于</a>
+              <a href="#/about">关于</a>
             </li>
             <li class="nav-dropdown-container">
               <a href="#">简历</a>
