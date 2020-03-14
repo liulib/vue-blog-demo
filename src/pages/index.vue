@@ -6,6 +6,8 @@
     <main class="main">
       <l-logo></l-logo>
       <l-articleList v-for="item in articleListData" :key="item.id" :articleData=item></l-articleList>
+      <!-- 分页组件 -->
+      <l-pagination :paginationData=paginationData @getPage="getPagination"></l-pagination>
     </main>
     <!-- footer区域 -->
    <l-footer></l-footer>
@@ -19,13 +21,15 @@ import temFooter from '../components/footer.vue'
 import temLogo from '../components/logo.vue'
 import temBackTOP from '../components/backTop.vue'
 import temArticleList from '../components/articleList.vue'
+import temPagination from '../components/pagination.vue'
 import { fetchArticleList } from '../utils/server.js'
 
 export default {
   name: 'index',
   data: function () {
     return {
-      articleListData: ''
+      articleListData: '',
+      paginationData: []
     }
   },
   components: {
@@ -33,16 +37,23 @@ export default {
     'l-footer': temFooter,
     'l-logo': temLogo,
     'l-backTOP': temBackTOP,
-    'l-articleList': temArticleList
+    'l-articleList': temArticleList,
+    'l-pagination': temPagination
   },
   methods: {
-    async getArticleList () {
-      const res = await fetchArticleList()
+    async getArticleList (params) {
+      const res = await fetchArticleList(params)
       if (res.status === 200) {
+        // 获取分页相关数据
+        this.paginationData = res.data.page_links
+        // 获取文章数据
         this.articleListData = res.data.result
       } else {
         console.log(res)
       }
+    },
+    getPagination (val) {
+      this.getArticleList({ page: val })
     }
   },
   created () {
