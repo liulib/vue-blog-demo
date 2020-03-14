@@ -23,23 +23,23 @@
                 <li>
                   <ul>
                     <li :key="item.id" v-for="item in category">
-                      <a :href="'#/category/' + item.id ">{{item.name}}</a>
+                      <a @click.prevent="sendCategory(item.id)">{{item.name}}</a>
                     </li>
                   </ul>
                 </li>
               </ul>
             </li>
             <li class="nav-dropdown-container">
-              <a href="#">归档</a>
+              <a href="#">热门</a>
             </li>
             <li class="nav-dropdown-container">
-              <a href="#">最新</a>
+              <a href="#">关于</a>
             </li>
             <li class="nav-dropdown-container">
-              <a href="#/about">关于</a>
+              <a href="#/about">简历</a>
             </li>
             <li class="nav-dropdown-container">
-              <a href="#">简历</a>
+              <a href="#">登陆</a>
             </li>
           </ul>
         </div>
@@ -73,6 +73,9 @@ export default {
       } else {
         console.log(res.data)
       }
+    },
+    sendCategory (val) {
+      this.$emit('getCate', val)
     }
   },
   created () {
@@ -180,6 +183,7 @@ nav li a {
   text-align: left;
   border-radius: 4px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .nav-dropdown a:hover {

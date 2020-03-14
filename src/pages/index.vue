@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 头部区域 -->
-    <l-header></l-header>
+    <l-header @getCate="getCategory"></l-header>
     <!-- 主体区域 -->
     <main class="main">
       <l-logo></l-logo>
@@ -28,8 +28,9 @@ export default {
   name: 'index',
   data: function () {
     return {
-      articleListData: '',
-      paginationData: []
+      articleListData: [],
+      paginationData: [],
+      options: {}
     }
   },
   components: {
@@ -41,8 +42,8 @@ export default {
     'l-pagination': temPagination
   },
   methods: {
-    async getArticleList (params) {
-      const res = await fetchArticleList(params)
+    async getArticleList () {
+      const res = await fetchArticleList(this.options)
       if (res.status === 200) {
         // 获取分页相关数据
         this.paginationData = res.data.page_links
@@ -53,11 +54,20 @@ export default {
       }
     },
     getPagination (val) {
-      this.getArticleList({ page: val })
+      this.options.page = val
+      this.getArticleList()
+    },
+    getCategory (val) {
+      this.options = {}
+      this.options.category = val
+      this.getArticleList()
     }
   },
   created () {
+    this.options = {}
     this.getArticleList()
+  },
+  computed: {
   }
 }
 

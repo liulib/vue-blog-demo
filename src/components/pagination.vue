@@ -28,10 +28,8 @@ export default {
     }
   },
   created () {
-    console.log(this.paginationData + '"123"')
   },
   mounted () {
-    console.log(this.paginationData + '"456"')
   }
 }
 </script>
