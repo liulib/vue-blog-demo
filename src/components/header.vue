@@ -33,10 +33,10 @@
               <a href="#">热门</a>
             </li>
             <li class="nav-dropdown-container">
-              <a href="#">关于</a>
+              <a href="#/about">关于</a>
             </li>
             <li class="nav-dropdown-container">
-              <a href="#/about">简历</a>
+              <a href="#/resume">简历</a>
             </li>
             <li class="nav-dropdown-container">
               <a href="#">登陆</a>
