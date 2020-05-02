@@ -19,7 +19,7 @@
 
             <li class="nav-dropdown-container">
               <a href="#">分类</a>
-                <ul class="nav-dropdown">
+              <ul class="nav-dropdown">
                 <li>
                   <ul>
                     <li :key="item.id" v-for="item in category">
@@ -57,34 +57,33 @@
   </div>
 </template>
 <script>
-import { fetchCategory } from '../utils/server.js'
 export default {
   name: 'l-header',
-  data: function () {
+  data: function() {
     return {
       category: ''
     }
   },
   methods: {
-    async getCatogoryData () {
-      const res = await fetchCategory()
-      if (res.status === 200) {
-        this.category = res.data.result
-      } else {
-        console.log(res.data)
+    async getCatogoryData() {
+      try {
+        const res = await this.$api.operations.fetchCategory()
+        this.category = res.result
+      } catch (error) {
+        alert(error)
       }
     },
-    sendCategory (val) {
+    sendCategory(val) {
       this.$emit('getCate', val)
     }
   },
-  created () {
+  created() {
     this.getCatogoryData()
   }
 }
 </script>
 <style lang="less" scoped>
-@base-color :  #42b983;
+@base-color: #42b983;
 
 .navbar {
   height: 61px;
@@ -232,5 +231,4 @@ nav li a {
     display: block;
   }
 }
-
 </style>

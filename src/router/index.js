@@ -12,20 +12,23 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    name: 'Index',
     component: Index
   },
   {
     path: '/article/:id',
     props: true,
-    // props: route => ({ id: route.params.id }),
+    name: 'Detail',
     component: Detail
   },
   {
     path: '/about',
+    name: 'About',
     component: About
   },
   {
     path: '/resume',
+    name: 'Resume',
     component: Resume
   }
 ]

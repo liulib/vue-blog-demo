@@ -1,27 +1,28 @@
 <template>
-<div>
+  <div>
     <temHeader></temHeader>
     <main class="main">
-        <p>哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒
-            哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒
-            哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒</p>
-        <hr />
-        <div class="nav-links">
-            <a href="https://github.com/liulib" target="_blank">github</a>
-            <a href="">resume</a>
-            <a href="">wechat</a>
-            <a href="">qq</a>
-        </div>
+      <p>
+        哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒
+        哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒
+        哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒
+      </p>
+      <hr />
+      <div class="nav-links">
+        <a href="https://github.com/liulib" target="_blank">github</a>
+        <a href>resume</a>
+        <a href>wechat</a>
+        <a href>qq</a>
+      </div>
     </main>
     <temFooter></temFooter>
     <temBackTOP></temBackTOP>
-</div>
+  </div>
 </template>
 
 <script>
 import temHeader from '../components/header.vue'
 import temFooter from '../components/footer.vue'
-import temLogo from '../components/logo.vue'
 import temBackTOP from '../components/backTop.vue'
 
 export default {
@@ -30,16 +31,12 @@ export default {
     temFooter: temFooter,
     temBackTOP: temBackTOP
   },
-  data () {
-    return {
-
-    }
+  data() {
+    return {}
   },
   computed: {},
   watch: {},
-  methods: {
-  }
-
+  methods: {}
 }
 </script>
 <style lang='less' scoped>
@@ -51,10 +48,10 @@ export default {
   .nav-links {
     text-align: center;
     a {
-    text-decoration: none;
-    margin: 1rem;
-    color: #01AAED;
-  }
+      text-decoration: none;
+      margin: 1rem;
+      color: #01aaed;
+    }
   }
 }
 
