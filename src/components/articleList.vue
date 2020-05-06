@@ -9,12 +9,10 @@
           <div class="post-meta">
             <span>分类于 {{ articleData.category }}</span>&nbsp;|&nbsp;
             <span>发表于 {{ articleData.update_time | moment }}</span>&nbsp;|&nbsp;
-            <span>评论数 </span>&nbsp;|&nbsp;
+            <span>评论数</span>&nbsp;|&nbsp;
             <span>阅读数 {{ articleData.read_nums }}</span>
           </div>
-          <p>
-            {{articleData.brief}}
-          </p>
+          <p>{{articleData.brief}}</p>
           <div class="read-more">
             <a :href="'#/article/' + articleData.id ">继续查看</a>
           </div>
@@ -28,12 +26,13 @@
 export default {
   props: ['articleData'],
   components: {},
-  data () {
+  data() {
     return {}
   },
   computed: {},
   watch: {},
-  methods: {}
+  methods: {},
+  created() {}
 }
 </script>
 
@@ -60,13 +59,13 @@ export default {
   line-height: 49px;
   a {
     text-decoration: none;
-    color: #304455
+    color: #304455;
   }
 }
 
 .blog-post .post-meta {
   margin-bottom: 20px;
-  color: #B1B1B1;
+  color: #b1b1b1;
 }
 
 .blog-post p {

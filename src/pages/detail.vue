@@ -23,7 +23,7 @@ export default {
   props: ['id'],
   data: function() {
     return {
-      article: ''
+      article: {}
     }
   },
   components: {
@@ -35,7 +35,7 @@ export default {
   methods: {
     async getArticle(id) {
       try {
-        const res = await this.$api.operations.fetchArticleList(this.options)
+        const res = await this.$api.operations.fetchArticle(id)
         this.article = res
       } catch (error) {
         alert(error)
