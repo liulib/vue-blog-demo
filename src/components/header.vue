@@ -4,7 +4,7 @@
       <nav>
         <!-- 文字logo部分 -->
         <div class="site-name">琉璃B的博客</div>
-        <!-- 导航栏部分 -->
+        <!-- PC导航栏部分 -->
         <div class="site-navbar clearfix">
           <ul>
             <li>
@@ -44,15 +44,40 @@
           </ul>
         </div>
       </nav>
-      <!-- 隐形导航栏 -->
-      <div class="sidebar">
-        <nav class="nav-links">
-          <div class="nav-item" :key="item.id" v-for="item in category">
-            <a :href="'#/category/' + item.id ">{{item.name}}</a>
-          </div>
-        </nav>
+      <!-- 移动端导航栏 -->
+      <div class="mobileSidebar" v-show="sidebarFlag">
+        <ul>
+          <li v-for="(item,index) in navData" :key="index">
+            <a :href="item.link">{{item.title}}</a>
+          </li>
+          <!-- <li class="mobileDropdownContainer">
+            <a href="#">分类</a>
+            <ul class="mobileDropdown" v-show="mobileDropdown">
+              <li>
+                <ul>
+                  <li :key="item.id" v-for="item in category">
+                    <a @click.prevent="sendCategory(item.id)">{{item.name}}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <span @click="mobileDropdown=!mobileDropdown">展开</span>
+          </li>
+          <li>
+            <a href="#">热门</a>
+          </li>
+          <li>
+            <a href="#/about">关于</a>
+          </li>
+          <li>
+            <a href="#/resume">简历</a>
+          </li>
+          <li>
+            <a href="#">登陆</a>
+          </li>-->
+        </ul>
       </div>
-      <div class="sidebar-button">菜单</div>
+      <div class="sidebar-button" @click="changeSidebarStatus">菜单</div>
     </header>
   </div>
 </template>
@@ -61,10 +86,21 @@ export default {
   name: 'l-header',
   data: function() {
     return {
-      category: ''
+      category: [],
+      sidebarFlag: false,
+      mobileDropdown: false,
+      navData: [
+        { title: '首页', link: '/' },
+        { title: '分类', link: '#' },
+        { title: '热门', link: '#' },
+        { title: '关于', link: '#/about' },
+        { title: '简历', link: '#/resume' },
+        { title: '登陆', link: '#' }
+      ]
     }
   },
   methods: {
+    // 获取分类数据
     async getCatogoryData() {
       try {
         const res = await this.$api.operations.fetchCategory()
@@ -73,8 +109,13 @@ export default {
         alert(error)
       }
     },
+    // 返回分类数据
     sendCategory(val) {
       this.$emit('getCate', val)
+    },
+    // 切换隐形导航栏状态
+    changeSidebarStatus() {
+      this.sidebarFlag = !this.sidebarFlag
     }
   },
   created() {
@@ -189,21 +230,31 @@ nav li a {
   color: #42b983;
 }
 
-.sidebar {
-  display: none;
+.mobileSidebar {
   font-size: 16px;
   background-color: #fff;
-  width: 10rem;
-  padding-left: 2rem;
+  width: 100%;
   position: fixed;
   z-index: 10;
   margin: 0;
-  top: 3.6rem;
+  top: 3.85rem;
   left: 0;
-  bottom: 0;
   box-sizing: border-box;
-  border-right: 1px solid #eaecef;
-  overflow-y: auto;
+  ul {
+    padding: 0 1rem;
+    li {
+      list-style: none;
+      padding: 0 1rem;
+      border-bottom: 1px solid #eee;
+      &:hover {
+        background-color: #42b983;
+      }
+      a {
+        text-decoration: none;
+        color: #304455;
+      }
+    }
+  }
 }
 
 .sidebar-button {
@@ -213,6 +264,7 @@ nav li a {
   left: 1rem;
   width: 2rem;
   height: 2rem;
+  line-height: 2rem;
   background: #42b983;
   font-size: 12px;
   opacity: 1;

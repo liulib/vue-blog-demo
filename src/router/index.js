@@ -13,23 +13,39 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    component: Index
+    component: Index,
+    meta: {
+      // 页面标题title
+      title: '首页'
+    }
   },
   {
     path: '/article/:id',
     props: true,
     name: 'Detail',
-    component: Detail
+    component: Detail,
+    meta: {
+      // 页面标题title
+      title: '详情页'
+    }
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: About,
+    meta: {
+      // 页面标题title
+      title: '关于'
+    }
   },
   {
     path: '/resume',
     name: 'Resume',
-    component: Resume
+    component: Resume,
+    meta: {
+      // 页面标题title
+      title: '简历'
+    }
   }
 ]
 

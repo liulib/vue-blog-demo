@@ -85,8 +85,12 @@
         <div class="about">
           <div class="infoTitle">
             <h2>自我评价</h2>
-            <span>一枚刚入门的前端菜鸟，能基于搜索引擎完成任务</span>
           </div>
+          <ul>
+            <li>
+              <span>一枚刚入门的前端菜鸟，能基于搜索引擎完成任务</span>
+            </li>
+          </ul>
         </div>
       </div>
       <!-- 右侧边栏 -->
@@ -103,25 +107,25 @@
                 <h3>HTML/CSS</h3>
                 <p>
                   能够编写语义化的 HTML，模块化的
-                  CSS，完成较复杂的布局,熟练使用css3属性完成炫酷的H5动画效果
+                  CSS，完成基础的布局
                 </p>
                 <p>熟悉Less等CSS预处理和模块化工具</p>
               </li>
               <li>
                 <h3>JavaScript</h3>
                 <p>熟悉原生 Javascript，能脱离 jQuery 等类库编码</p>
-                <p>熟悉常用的ES6新语法，能使用常用ES6编码</p>
+                <p>熟悉常用的ES6新语法，能使用常用ES6语法编码</p>
               </li>
               <li>
                 <h3>框架类</h3>
-                <p>能够熟悉使用vue.js框架并结合vant进行模块化页面开发</p>
+                <p>熟悉vue.js框架，能使用其结合vant进行模块化页面开发</p>
               </li>
             </ul>
             <h2>后端</h2>
             <ul class="itemList">
               <li>
                 <h3>Python</h3>
-                <p>了解python的基础语法，能使用django编写简单web应用</p>
+                <p>熟悉python的基础语法，能使用django编写简单web应用</p>
               </li>
               <li>
                 <h3>Linux</h3>
@@ -145,7 +149,7 @@
               <a href="https://github.com/liulib/mobile-shop" target="__blank">
                 <span class="iconfont icon-github"></span>
               </a>
-              <a href="http://www.liulib.com" target="__blank">
+              <a href="http://shop.liulib.com" target="__blank">
                 <span class="iconfont icon-tiaozhuan"></span>
               </a>
             </h2>
@@ -309,6 +313,9 @@ a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  li:last-child {
+    white-space: normal;
   }
   span {
     font-weight: bold;
