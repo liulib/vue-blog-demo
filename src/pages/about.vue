@@ -2,15 +2,11 @@
   <div>
     <temHeader></temHeader>
     <main class="main">
-      <p>
-        哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒
-        哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒
-        哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒
-      </p>
+      <p>路明非是个穷孩子，他很怂他很欠他很不霸气，但他从未吝啬过付出。路明非是个很穷的孩子，他的领地很小很小，只有那几个真正在乎他的人、看得上他的人、愿意帮助他的朋友，谁侵犯到了这些东西，他就会挺身而出。</p>
       <hr />
       <div class="nav-links">
         <a href="https://github.com/liulib" target="_blank">github</a>
-        <a href>resume</a>
+        <a href="http://www.liulib.com">resume</a>
         <a href>wechat</a>
         <a href>qq</a>
       </div>

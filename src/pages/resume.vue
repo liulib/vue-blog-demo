@@ -107,36 +107,40 @@
                 <h3>HTML/CSS</h3>
                 <p>
                   能够编写语义化的 HTML，模块化的
-                  CSS，完成基础的布局
+                  CSS，完成常用的布局
                 </p>
-                <p>熟悉Less等CSS预处理和模块化工具</p>
+                <p>了解Less等CSS预处理和模块化工具</p>
               </li>
               <li>
                 <h3>JavaScript</h3>
                 <p>熟悉原生 Javascript，能脱离 jQuery 等类库编码</p>
-                <p>熟悉常用的ES6新语法，能使用常用ES6语法编码</p>
+                <p>了解常用的ES6新语法，能使用常用ES6语法编码</p>
               </li>
               <li>
                 <h3>框架类</h3>
-                <p>熟悉vue.js框架，能使用其结合vant进行模块化页面开发</p>
+                <p>了解vue.js框架，能使用其结合vant进行模块化页面开发</p>
               </li>
             </ul>
             <h2>后端</h2>
             <ul class="itemList">
               <li>
                 <h3>Python</h3>
-                <p>熟悉python的基础语法，能使用django编写简单web应用</p>
+                <p>了解python的基础语法，能使用django编写简单web应用</p>
               </li>
               <li>
                 <h3>Linux</h3>
-                <p>熟悉linux基本命令，能基于ubuntu部署django+vue的前后端分离项目</p>
+                <p>了解linux常用命令，能基于ubuntu、nginx部署django+vue的前后端分离项目</p>
               </li>
             </ul>
             <h2>其他</h2>
             <ul class="itemList">
               <li>
                 <h3>软件类</h3>
-                <p>熟悉photoshop的基本使用，能使用其完成抠图等操作</p>
+                <p>了解photoshop的基本使用，能使用其完成抠图等操作</p>
+              </li>
+              <li>
+                <h3>版本管理</h3>
+                <p>了解git常用命令，对git各种工作流简单了解</p>
               </li>
             </ul>
           </div>
