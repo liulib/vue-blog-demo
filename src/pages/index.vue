@@ -44,6 +44,7 @@ export default {
     async getArticleList() {
       try {
         const res = await this.$api.operations.fetchArticleList(this.options)
+        console.log(res)
         // 获取分页相关数据
         this.paginationData = res.page_links
         // 获取文章数据
