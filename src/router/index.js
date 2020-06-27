@@ -1,11 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Index from '../pages/index.vue'
-import Detail from '../pages/detail.vue'
-import About from '../pages/about.vue'
-import Resume from '../pages/resume.vue'
-// import Logo from '../components/logo.vue'
-// import ArticleList from '../components/articleList.vue'
+
+const Index = () =>
+  import(
+    /* webpackChunkName: "group-index-detail-about" */ '../pages/index.vue'
+  )
+const Detail = () =>
+  import(
+    /* webpackChunkName: "group-index-detail-about" */ '../pages/detail.vue'
+  )
+const About = () =>
+  import(
+    /* webpackChunkName: "group-index-detail-about" */ '../pages/about.vue'
+  )
+const Resume = () =>
+  import(/* webpackChunkName: "group-resume" */ '../pages/resume.vue')
 
 Vue.use(VueRouter)
 
