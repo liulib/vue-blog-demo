@@ -4,7 +4,7 @@
       <article class="blog-post">
         <div class="blog-post-body">
           <h2>
-            <a href="/articles/detail/31/">{{articleData.title}}</a>
+            <a href="#">{{articleData.title}}</a>
           </h2>
           <div class="post-meta">
             <span>分类于 {{ articleData.category }}</span>&nbsp;|&nbsp;

@@ -50,31 +50,6 @@
           <li v-for="(item,index) in navData" :key="index">
             <a :href="item.link">{{item.title}}</a>
           </li>
-          <!-- <li class="mobileDropdownContainer">
-            <a href="#">分类</a>
-            <ul class="mobileDropdown" v-show="mobileDropdown">
-              <li>
-                <ul>
-                  <li :key="item.id" v-for="item in category">
-                    <a @click.prevent="sendCategory(item.id)">{{item.name}}</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <span @click="mobileDropdown=!mobileDropdown">展开</span>
-          </li>
-          <li>
-            <a href="#">热门</a>
-          </li>
-          <li>
-            <a href="#/about">关于</a>
-          </li>
-          <li>
-            <a href="#/resume">简历</a>
-          </li>
-          <li>
-            <a href="#">登陆</a>
-          </li>-->
         </ul>
       </div>
       <div class="sidebar-button" @click="changeSidebarStatus">菜单</div>
@@ -93,8 +68,8 @@ export default {
         { title: '首页', link: '/' },
         { title: '分类', link: '#' },
         { title: '热门', link: '#' },
-        { title: '关于', link: '#/about' },
-        { title: '简历', link: '#/resume' },
+        { title: '关于', link: '/about' },
+        { title: '简历', link: '/resume' },
         { title: '登陆', link: '#' }
       ]
     }

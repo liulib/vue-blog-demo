@@ -4,7 +4,7 @@
       <article class="blog-post">
         <div class="blog-post-body">
           <h2>
-            <a :href="'#/article/' + articleData.id ">{{ articleData.title }}</a>
+            <a :href="'article/' + articleData.id ">{{ articleData.title }}</a>
           </h2>
           <div class="post-meta">
             <span>分类于 {{ articleData.category }}</span>&nbsp;|&nbsp;
@@ -14,7 +14,7 @@
           </div>
           <p>{{articleData.brief}}</p>
           <div class="read-more">
-            <a :href="'#/article/' + articleData.id ">继续查看</a>
+            <a :href="'article/' + articleData.id ">继续查看</a>
           </div>
         </div>
       </article>
