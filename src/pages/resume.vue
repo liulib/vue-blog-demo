@@ -118,25 +118,25 @@
               </li>
               <li>
                 <h3>框架类</h3>
-                <p>了解vue.js框架，能使用其结合vant进行模块化页面开发</p>
+                <p>熟练使用Vue.js框架，能使用其结合Vant、ElementUI进行模块化页面开发</p>
               </li>
             </ul>
             <h2>后端</h2>
             <ul class="itemList">
               <li>
                 <h3>Python</h3>
-                <p>了解python的基础语法，能使用django编写简单web应用</p>
+                <p>了解Python的基础语法，能使用Django编写简单web应用</p>
               </li>
               <li>
                 <h3>Linux</h3>
-                <p>了解linux常用命令，能基于ubuntu、nginx部署django+vue的前后端分离项目</p>
+                <p>了解linux常用命令，能基于Ubuntu、Nginx部署Django+Vue的前后端分离项目</p>
               </li>
             </ul>
             <h2>其他</h2>
             <ul class="itemList">
               <li>
                 <h3>软件类</h3>
-                <p>了解photoshop的基本使用，能使用其完成抠图等操作</p>
+                <p>了解Photoshop的基本使用，能使用其完成抠图等操作</p>
               </li>
               <li>
                 <h3>版本管理</h3>
@@ -148,6 +148,7 @@
           <div class="projects">
             <h1>个人项目</h1>
             <hr />
+            <!-- 移动商城 -->
             <h2>
               移动商城
               <a href="https://github.com/liulib/mobile-shop" target="__blank">
@@ -180,6 +181,35 @@
                 <p>熟悉了函数节流 and 函数防抖，并在项目中使用函数节流</p>
               </li>
             </ul>
+            <!-- 电商管理后台 -->
+            <h2>
+              电商管理后台
+              <a href="https://github.com/liulib/manage-shop" target="__blank">
+                <span class="iconfont icon-github"></span>
+              </a>
+              <a href="http://manage.liulib.com/" target="__blank">
+                <span class="iconfont icon-tiaozhuan"></span>
+              </a>
+            </h2>
+            <ul class="itemList">
+              <li>
+                <h3>项目描述</h3>
+                <p>基于Vue+Element-ui实现的电商管理后台，实现了整体的业务逻辑</p>
+              </li>
+              <li>
+                <h3>项目技术</h3>
+                <p>前端：vue + vue-router + axios + less + element-ui</p>
+                <p>
+                  后端：
+                  <a href="https://gitee.com/wBekvam/vueShop-api-server">B站上找到的黑马程序员的实战项目后台</a>
+                </p>
+              </li>
+              <li>
+                <h3>项目成就</h3>
+                <p>此项目并没有学习到多少新知识，主要熟悉了ElementUI的使用，git的分支操作，同时了解了Vue的打包优化，如使用externals加载cdn、实现路由懒加载</p>
+              </li>
+            </ul>
+            <!-- 个人博客 -->
             <h2>
               个人博客
               <a href="https://github.com/liulib/vue-blog-demo" target="__blank">
